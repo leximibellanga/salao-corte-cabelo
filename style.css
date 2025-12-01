@@ -1,0 +1,333 @@
+/* ==================== CARACTERES ESPECIAIS ==================== */
+@charset "UTF-8";
+
+/* ==================== GOOGLE FONTS ==================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,200;1,300;1,400;1,500;1,600&display=swap');
+
+
+/* ==================== VARIAVEIS ==================== */
+:root {
+    /* -------- cores -------- */
+    --cor-primaria: #e53935;
+    --cor-primaria-dark: #C62828;
+    --cor-secundaria: #424242;
+    --cor-destaque: #1565c0;
+    --cor-fundo-geral: #f9fafb;
+    --cor-texto-principal: #1e1e1e;
+    --cor-cinza: #e5e5e5; 
+    --cor-branca: white;
+
+    /* -------- fonte -------- */
+    --fonte: 'Poppins', sans-serif;
+
+    /* -------- sombra -------- */
+    --sombra: 0 4px 12px rgba(20, 20, 20, 0.06);
+}
+
+
+/* ==================== RESETs e BASE ==================== */
+* {
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fonte);
+    font-weight: normal;
+    font-size: 1em;
+    background-color: var(--cor-fundo-geral);
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* ==================== HEADER ==================== */
+header {
+    background-color: #f7f1f3;
+    padding: 0px 20px 10px;
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.1);
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: start;
+    justify-content: center;
+}
+
+header .parte01 {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header .parte01 .logo {
+    width: 130px;
+}
+
+header .parte02 {
+    width: 100%;
+    background-color: var(--cor-fundo-geral);
+    padding: .75rem;
+    border-radius: .5rem;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, .1);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 1rem;
+}
+
+header .parte02 .logo-descricao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+header .parte02 .logo-descricao span {
+    display: inline-block;
+    font-size: 1.5em;
+    font-weight: bold;
+    background-color: var(--cor-primaria);
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    color: var(--cor-branca);
+    box-shadow: var(--sombra);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header .parte02 .logo-descricao h1 {
+    font-size: 1.1rem;
+    margin-block: 0;
+    font-weight: bold;
+}
+
+header .parte02 .logo-descricao p {
+    font-size: .85rem;
+    font-weight: 200;
+    color: #333;
+}
+
+nav {
+    position: sticky;
+    top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+nav a {
+    color: var(--cor-texto-principal);
+    transition: color .4s ease;
+}
+
+nav a:hover {
+    color: var(--cor-primaria);
+}
+
+.agendar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.botao-agendar {
+    background-color: var(--cor-primaria);
+    color: var(--cor-branca);
+    padding: 10px 15px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: 500;
+    box-shadow: var(--sombra);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.botao-agendar:hover {
+    background-color: var(--cor-primaria-dark);
+}
+
+.butao-menu-burger, nav #botao-fechar-menu  {
+    display: none;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+
+/* ==================== MAIN ==================== */
+main {
+
+}
+
+
+
+/* ==================== MAIN | IMAGENS ==================== */
+main .capa {
+    position: relative;
+    height: 785px;
+    background-color: var(--cor-secundaria);
+    background-image: url('imagens/salao01.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: mudaImagem 8s ease infinite;
+    animation-delay: 2s;
+}
+
+@keyframes mudaImagem {
+    0% {
+        background-image: url('imagens/salao01.jpg');    
+    }
+
+    100% {
+        background-image: url('imagens/salao02.jpg');  
+    }
+}
+
+main .capa::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .4);
+    z-index: 100;
+}
+
+.capa-titulo, .capa-subtitulo, .capa-texto {
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    color: var(--cor-cinza);
+    z-index: 1001;    
+}
+
+main .capa .capa-titulo {
+    font-size: 2.5rem;
+    font-weight: 700; 
+}
+
+main .capa .capa-subtitulo {
+    font-size: 2.3rem;
+    font-weight: 200;
+    padding-bottom: 2rem;    
+}
+
+main .capa .capa-texto {
+    text-align: center;
+    line-height: 2;
+    font-size: 1.2em;
+    font-weight: 300;
+    width: 90%;
+    max-width: 1200px;
+    padding-bottom: 5rem;
+}
+
+main .capa button {
+    z-index: 1001;
+}
+
+
+
+
+/* ==================== RESPONSIVIDADE ==================== */
+/* ----------------- celular ----------------- */
+@media screen and (max-width: 450px) {
+    header .parte01 .logo {
+        width: 100px;
+    }
+    header .parte02 .logo-descricao span {
+        height: 35px;
+        width: 35px;
+    }
+    header .parte02 .logo-descricao h1 {
+        font-size: .9em;
+    }
+    header .parte02 .logo-descricao p {
+        font-size: .7em;
+    }
+    .botao-agendar {
+        padding: 8px 10px;
+        font-size: .85em;
+    }
+}
+
+
+/* /* ----------------- tablet ----------------- */
+@media screen and (max-width: 768px) {
+    /* =============== HEADER AND NAV =============== */
+    header {
+        position: relative;
+        overflow: hidden;
+    }
+    nav {
+        position: absolute;
+        top: 140px;
+        right: -1000px;
+        background-color: var(--cor-branca);
+        width: 80%;
+        border-radius: 5px;
+        box-shadow: 0 3px 9px rgba(0, 0, 0, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-flow: column wrap;
+        padding: 50px 10px 20px;
+        gap: 1.6rem;
+        transition: right .4s ease;
+    }
+    nav #botao-fechar-menu {
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        font-size: 1.5em;
+        cursor: pointer;
+    }
+    nav a {
+        text-transform: capitalize;
+        color: var(--cor-texto-principal);
+        transition: color .3s ease;
+    }
+    a:hover {
+        color: var(--cor-primaria);
+    }
+    .butao-menu-burger {
+        display: block;
+        cursor: pointer;
+    }
+}
+
+@media screen and (max-width: 828px) {
+    header .parte02 {
+        justify-content: space-between;
+    }
+    nav {
+        gap: 1.1rem;
+    }
+}
