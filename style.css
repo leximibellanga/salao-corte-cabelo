@@ -270,7 +270,7 @@ main .portfolio-titulo {
     font-size: 2rem;
     margin: 3rem 1rem 2rem;
     font-weight: 600;
-    
+
 }
 
 main .portfolio-titulo::after {
@@ -325,7 +325,10 @@ main #ver-mais:hover {
 main .agendar {
     position: fixed;
     display: none;
-
+    width: 90%;
+    max-width: 400px;
+    border-radius: 8px;
+    box-shadow: 2px 3px 9px rgba(0, 0, 0, .3);
     top: 50%;
     left: 50%;
     background-color: var(--cor-branca);
@@ -335,7 +338,59 @@ main .agendar {
     transform: translate(-50%, -50%);
 }
 
+main .agendar .agendar-logo {
+    width: 100px;
+    display: block;
+    margin: 0 auto 1rem;
+    border-radius: 50%;
+}
 
+main .agendar h2 {
+    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+main .agendar label {
+    display: block;
+    font-size: .9em;
+    margin-bottom: .5rem;
+    font-weight: 500;
+}
+
+main .agendar input, main .agendar select, main .agendar textarea {
+    width: 100%;
+    padding: 8px 10px;
+    margin-bottom: 1rem;
+    border: 1px solid var(--cor-cinza);
+    border-radius: 5px;
+    font-size: .9em;
+    font-family: var(--fonte);
+}
+
+main .agendar input[type='submit'], main .agendar input[type='reset'] {
+    background-color: var(--cor-primaria);
+    color: var(--cor-branca);
+    padding: 10px 15px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    font-size: .9em;
+    font-weight: 500;
+    box-shadow: var(--sombra);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+main .agendar input[type='submit']:hover {
+    background-color: var(--cor-primaria-dark);
+}
+
+main .agendar input[type='reset']:hover {
+    background-color: #757575;
+    color: var(--cor-branca);
+}
 
 
 /* ==================== RESPONSIVIDADE ==================== */
