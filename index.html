@@ -38,7 +38,7 @@
       </nav>
 
       <div class="agendar">
-        <button class="botao-agendar">agendar <i class='bx bx-calendar'></i></button>
+        <button class="botao-agendar">agendar <i class='bx bx-calendar'></i></button> <!--[0]-->
 
         <div class="butao-menu-burger" id="butao-menu-burger">
           <i class='bx  bx-menu'></i>
@@ -49,14 +49,14 @@
 
   <!-- ======================= MAIN ======================= -->
   <main>
-    <!-- ======================= MAIN => IMAGENS ======================= -->
+    <!-- ======================= MAIN => CAPA ======================= -->
     <section class="capa">
       <h1 class="capa-titulo">Hair Solution</h1>
       <h2 class="capa-subtitulo">Agendamento Rápido</h2>
       <p class="capa-texto">
         Agendar nunca foi tão fácil. Em poucos cliques, você garante seu horário com os melhores profissionais da região. Sem filas, sem espera, sem complicação. É só escolher o dia e a hora, e a Hair Solution cuida do resto.
       </p>
-      <button class="botao-agendar">agendar <i class='bx bx-calendar'></i></button>
+      <button class="botao-agendar">agendar <i class='bx bx-calendar'></i></button> <!--[1]-->
     </section>
     <!-- ======================= MAIN => SOBRE ======================= -->
 
@@ -65,9 +65,50 @@
 
 
     <!-- ======================= MAIN => PORTFOLIO ======================= -->
+    <section class="portfolio" id="portfolio">
+      <h2 class="portfolio-titulo">Portfólio</h2>
+      <div class="portfolio-container">
+        <img src="imagens/corte01.jpg" alt="corte modelo 01" class="portfolio-img"> <!--[0]-->
+        <img src="imagens/corte02.jpg" alt="corte modelo 02" class="portfolio-img"> <!--[1]-->
+        <img src="imagens/corte03.jpg" alt="corte modelo 03" class="portfolio-img"> <!--[2]-->
+        <img src="imagens/corte04.jpg" alt="corte modelo 04" class="portfolio-img"> <!--[3]-->
+        <img src="imagens/corte05.jpg" alt="corte modelo 05" class="portfolio-img"> <!--[4]-->
+        <img src="imagens/corte06.jpg" alt="corte modelo 06" class="portfolio-img"> <!--[5]-->
+        <img src="imagens/corte08.jpg" alt="corte modelo 08" class="portfolio-img" style="display: none;"> <!--[6]-->
+        <img src="imagens/corte09.jpg" alt="corte modelo 09" class="portfolio-img" style="display: none;"> <!--[7]-->
+        <img src="imagens/corte10.jpg" alt="corte modelo 10" class="portfolio-img" style="display: none;"> <!--[8]-->
+        <img src="imagens/corte11.jpg" alt="corte modelo 11" class="portfolio-img" style="display: none;"> <!--[9]-->
+        <img src="imagens/corte12.jpg" alt="corte modelo 12" class="portfolio-img" style="display: none;"> <!--[10]-->
+        <img src="imagens/corte13.jpg" alt="corte modelo 13" class="portfolio-img" style="display: none;"> <!--[11]-->
+        <img src="imagens/corte14.jpg" alt="corte modelo 14" class="portfolio-img" style="display: none;"> <!--[12]-->
+        <img src="imagens/corte15.jpg" alt="corte modelo 15" class="portfolio-img" style="display: none;"> <!--[13]-->
+        <img src="imagens/corte16.jpg" alt="corte modelo 16" class="portfolio-img" style="display: none;"> <!--[14]-->
+      </div>
+      <div class="ver-mais">
+        <button id="ver-mais">ver mais</button>
+      </div>
+    </section>
 
 
 
+
+    <!-- ======================= AGENDAR ======================= -->
+    <section class="agendar" id="agendar">
+      <form action="#" method="post">
+        <h3>Agende seu horário</h3>
+        <label for="inome">Nome</label>
+        <input type="text" name="nome" id="inome" placeholder="Seu nome">
+
+        <label for="idata">Data</label>
+        <input type="date" name="data" id="idata" placeholder="dd/mm/aaaa">
+
+        <label for="ihora">Hora</label>
+        <input type="time" name="hora" id="ihora" placeholder="--:--">
+
+        <input type="submit" value="Enviar">
+        <input type="reset" value="Limpar">
+      </form>
+    </section>
   </main>
 
   <!-- ======================= FOOTER ======================= -->

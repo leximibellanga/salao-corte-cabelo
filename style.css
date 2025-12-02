@@ -25,6 +25,24 @@
 }
 
 
+/* ==================== BARRA DE ROLAGEM LATERAL ==================== */
+::-webkit-scrollbar-track {
+  background: var(--cor-fundo-geral);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--cor-primaria);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--cor-primaria-dark);
+}
+
+
 /* ==================== RESETs e BASE ==================== */
 * {
     margin: 0; 
@@ -122,11 +140,12 @@ header .parte02 .logo-descricao p {
 
 nav {
     position: sticky;
-    top: 10px;
+    top: 0px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 2rem;
+    z-index: 10001;
 }
 
 nav a {
@@ -176,12 +195,12 @@ nav a:hover {
 
 /* ==================== MAIN ==================== */
 main {
-
+    position: relative;
+    width: 100%;
+    height: 100vh;
 }
 
-
-
-/* ==================== MAIN | IMAGENS ==================== */
+/* ==================== MAIN | CAPA ==================== */
 main .capa {
     position: relative;
     height: 785px;
@@ -196,18 +215,6 @@ main .capa {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    animation: mudaImagem 8s ease infinite;
-    animation-delay: 2s;
-}
-
-@keyframes mudaImagem {
-    0% {
-        background-image: url('imagens/salao01.jpg');    
-    }
-
-    100% {
-        background-image: url('imagens/salao02.jpg');  
-    }
 }
 
 main .capa::before {
@@ -253,11 +260,88 @@ main .capa button {
 }
 
 
+/* ==================== MAIN | PORTFOLIO ==================== */
+main .portfolio {
+    margin: 2rem;
+    text-align: center;
+}
+
+main .portfolio-titulo {
+    font-size: 2rem;
+    margin: 3rem 1rem 2rem;
+    font-weight: 600;
+    
+}
+
+main .portfolio-titulo::after {
+    content: '';
+    display: block;
+    background-color: rgba(229, 56, 53, 0.5);
+    width: 150px;
+    height: 4px;
+    margin: auto;
+}
+
+
+main .portfolio-container {
+    max-width: calc((350px * 3) + (1.5rem * 2));
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+main .portfolio-container .portfolio-img {
+    width: 350px;
+    border-radius: 8px;
+    box-shadow: 2px 3px 9px rgba(0, 0, 0, .3);
+    transition: transform .3s ease;
+}
+
+main .portfolio-container .portfolio-img:hover {
+    transform: scale(1.03);
+    box-shadow: 2px 3px 9px rgba(229, 57, 53, .3);
+}
+
+main #ver-mais {
+    margin: 2rem;
+    padding: 10px 15px;
+    font-weight: 500;
+    font-size: 1em;
+    background-color: var(--cor-primaria);
+    border: none;
+    border-radius: 5px;
+    color: var(--cor-branca);
+    cursor: pointer;
+    transition: background-color .4s ease;
+}
+
+main #ver-mais:hover {
+    background-color: var(--cor-primaria-dark);
+}
+
+
+/* ==================== MAIN | AGENDAR ==================== */
+main .agendar {
+    position: fixed;
+    display: none;
+
+    top: 50%;
+    left: 50%;
+    background-color: var(--cor-branca);
+    padding: 1.5rem 2.5rem;
+    box-shadow: 2px 3px 9px rgba(0, 0, 0, .3);
+    z-index: 1003;
+    transform: translate(-50%, -50%);
+}
+
+
 
 
 /* ==================== RESPONSIVIDADE ==================== */
 /* ----------------- celular ----------------- */
 @media screen and (max-width: 450px) {
+    /* ========= header ======== */
     header .parte01 .logo {
         width: 100px;
     }
@@ -275,6 +359,27 @@ main .capa button {
         padding: 8px 10px;
         font-size: .85em;
     }
+
+    /* ======== MAIN ======== */
+    /* ======== capa ======== */
+    main .capa {
+        height: 600px;
+        background-position: 15%;
+    }
+    main .capa .capa-titulo {
+        font-size: 2em;
+    }
+    main .capa .capa-subtitulo {
+        font-size: 1.7em;
+        padding-bottom: 1.5rem;
+    }
+    main .capa .capa-texto {
+        font-size: 1.1em;
+        padding-bottom: 3rem;        
+    }
+
+    /* ======= portfolio =======*/
+
 }
 
 
@@ -321,6 +426,17 @@ main .capa button {
     .butao-menu-burger {
         display: block;
         cursor: pointer;
+    }
+
+    /* =============== MAIN ==================== */
+    /* ------------------- capa ------------------ */
+    main .capa {
+        background-position: 15%;
+    }
+
+    /* ------------------- portfolio ------------------ */
+    main .portfolio-container {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
