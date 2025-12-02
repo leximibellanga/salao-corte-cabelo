@@ -12,6 +12,7 @@
     --cor-primaria-dark: #C62828;
     --cor-secundaria: #424242;
     --cor-destaque: #1565c0;
+    --cor-destaque-hover: #115098;
     --cor-fundo-geral: #f9fafb;
     --cor-texto-principal: #1e1e1e;
     --cor-cinza: #e5e5e5; 
@@ -203,7 +204,6 @@ nav a:hover {
 main {
     position: relative;
     width: 100%;
-    height: 100vh;
 }
 
 /* ==================== MAIN | CAPA ==================== */
@@ -316,26 +316,26 @@ main .servicos-titulo::after {
     height: 4px;
     margin: auto;
 }
-table {
+main .servicos table {
     margin: auto;
     border-collapse: collapse;
     width: 80%;
     max-width: 800px;
 }
-table, th, td {
+main .servicos table, th, td {
     border: 1px solid var(--cor-cinza);
     padding: 10px;
     text-align: left;
 }
-th {
+main .servicos th {
     background-color: var(--cor-primaria);
     color: var(--cor-branca);
 }
-td {
+main .servicos td {
     background-color: var(--cor-branca);
     color: var(--cor-texto-principal);
 }
-td.nr {
+main .servicos td.nr {
     text-align: right;
 }
 
@@ -471,9 +471,127 @@ main .agendar input[type='reset']:hover {
     color: var(--cor-branca);
 }
 
+/* ================== CONFIRMACAO DO AGENDAMENTO ==================== */
+main .msg-confirmacao {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--cor-branca);
+    width: 400px;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+    z-index: 1004;
+}
+
+main .msg-confirmacao h2 {
+    font-size: 1.2em;
+}
+
+main .msg-confirmacao .msg-texto {
+    display: inline-block;
+    background-color: rgba(0, 128, 0, 0.3);
+    color: darkgreen;
+    font-weight: 600;
+    font-size: 0.95em;
+    padding: 5px 15px;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 2rem;
+}
+
+main .msg-confirmacao table {
+    border-collapse: collapse;
+}
+
+main .msg-confirmacao th, main .msg-confirmacao td {
+    padding: 4px;
+    border: none;
+}
+
+main .msg-confirmacao #msg-fechar {
+    padding: 8px 16px;
+    background-color: var(--cor-destaque);
+    color: var(--cor-branca);
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: background-color .4s ease;
+}
+
+main .msg-confirmacao tr {
+    width: calc(400px - 4rem);
+    display: flex;
+    justify-content: space-between;
+}
+
+main .msg-confirmacao #msg-fechar:hover {
+    background-color: var(--cor-destaque-hover);   
+}
+
 
 /* ================== FOOTER ==================== */
+footer {
+    background-color: var(--cor-texto-principal);
+    padding: 2.25rem 0;
+}
 
+footer .rodape-container {
+    width: 1200px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+} 
+
+footer hr {
+    display: block;
+    width: 1200px;
+    margin: auto;
+    margin: 2rem auto;
+    border: none;
+    border-bottom: .5px solid #333;
+}
+
+footer .rodape-icone {
+    width: 140px;
+    margin: auto;
+    transform: rotate(-40deg);
+}
+
+footer .rodape-container p {
+    color: #888;
+    font-weight: 300;
+    font-size: 0.9em;
+}
+
+footer .desenvolvedor:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+footer .rodape-container a {
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--cor-cinza);
+    font-size: .8em;
+    transition: color .3s ease;
+}
+
+footer .rodape-container a:hover {
+    color: var(--cor-primaria);
+}
+
+footer .rodape-container a:nth-child(1)::after,
+footer .rodape-container a:nth-child(2)::after, 
+footer .rodape-container a:nth-child(3)::after {
+    content: '/';
+    padding: 1.2rem;
+    font-weight: 300;
+} 
 
 /* ==================== RESPONSIVIDADE ==================== */
 /* ----------------- celular ----------------- */
@@ -539,6 +657,22 @@ main .agendar input[type='reset']:hover {
         font-size: 0.9em;
     }
     
+    /* ---------- footer --------------- */
+    footer.rodape .rodape-container, 
+    footer.rodape .rodape-container .rodape-redes-sociais {
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: stretch;
+    }
+    footer.rodape .rodape-icone {
+        width: 70px;
+    }
+    footer.rodape .rodape-container p {
+        font-size: .8em;
+    }
+    footer.rodape .rodape-container .rodape-redes-sociais a {
+        font-size: 0.6em;
+    }
 }
 
 
@@ -597,6 +731,26 @@ main .agendar input[type='reset']:hover {
     main .portfolio-container {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    /* ---------- footer --------------- */
+    footer .rodape-icone {
+        width: 100px;
+    }
+    footer .rodape-container p {
+        align-self: start;
+    }
+    footer .rodape-container {
+        gap: 2rem;
+    }
+    footer .rodape-container .rodape-redes-sociais {
+        font-size: 1em;
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    footer .rodape-container .rodape-redes-sociais a::after {
+        content: '';
+    }
 }
 
 @media screen and (max-width: 828px) {
@@ -605,5 +759,17 @@ main .agendar input[type='reset']:hover {
     }
     nav {
         gap: 1.1rem;
+    }
+
+    /* ---------- footer --------------- */
+    footer .rodape-container a {
+        font-size: 0.7em;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    /* ---------- footer --------- */
+    footer .rodape-container, footer hr {
+        width: 90%;
     }
 }

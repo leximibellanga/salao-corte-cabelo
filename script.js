@@ -38,9 +38,12 @@ verMais.addEventListener('click', () => {
 /* =============== BOTAO PARA ABRIR FORMULARIO DE AGENDAMENTO ================*/
 let botaoAgendar = document.getElementsByClassName('botao-agendar')
 let agendar = document.getElementById('agendar') 
+let body = document.body
 
 for (let i = 0; i < botaoAgendar.length; i++) {
     botaoAgendar[i].addEventListener('click', () => {
         agendar.style.display = 'block'
     })
 }
+
+

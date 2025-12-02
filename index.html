@@ -67,6 +67,7 @@
           Na Hair Solution, acreditamos que um bom corte de cabelo vai além da estética; é uma experiência que transforma e eleva a autoestima. Com uma equipe de profissionais altamente qualificados e apaixonados pelo que fazem, oferecemos serviços personalizados que atendem às necessidades e desejos de cada cliente. Nosso compromisso é proporcionar um ambiente acolhedor e moderno, onde cada visita se torna um momento especial. Venha descobrir como podemos realçar sua beleza natural com estilo e sofisticação.
         </p>
       </div>
+    </section>
 
     <!-- ======================= MAIN => SERVICOS ======================= -->
     <section class="servicos" id="servicos">
@@ -159,7 +160,7 @@
 
     <!-- ======================= AGENDAR ======================= -->
     <section class="agendar" id="agendar">
-      <form action="#" method="post">
+      <form action="#msg-confirmacao" method="post">
         <img src="imagens/logotipo.jpg" alt="logotipo da Hair Solution" class="agendar-logo">
         <h2>Agende seu horário</h2>
         <label for="inome">Nome</label>
@@ -175,11 +176,48 @@
         <input type="reset" value="Limpar">
       </form>
     </section>
+
+    <!-- ======================= CONFIRMACAO DO AGENDAMENTO ======================= -->
+    <aside class="msg-confirmacao" id="msg-confirmacao">
+        <h2>AGENDAMENTO</h2>
+        <p class="msg-texto">Agendamento feito com sucesso!</p>
+        <table>
+          <tr>
+            <th>Nome: </th>
+            <td id="msg-nome">Leximibel</td>
+          </tr>
+          <tr>
+            <th>Data: </th>
+            <td id="msg-data">11/08/2005</td>
+          </tr>
+          <tr>
+            <th>Hora: </th>
+            <td id="msg-hora">17:07</td>
+          </tr>
+          <tr>
+            <th>Valor: </th>
+            <td id="msg-nome">100,00MZN</td>
+          </tr>
+        </table>
+        <button id="msg-fechar">Fechar</button>
+      </aside>
   </main>
 
   <!-- ======================= FOOTER ======================= -->
-  <footer>
-    
+  <footer class="rodape">
+    <div class="rodape-icone">
+      <img src="imagens/rodape-icone.png" alt="icone do rodapé da Hair Solution">
+    </div>
+    <hr>
+    <div class="rodape-container">
+      <p>Copyright &copy; 2025 <span class="desenvolvedor">Leximibel Langa</span></p>
+      <div class="rodape-redes-sociais">
+        <a href="https://facebook.com/leximibellanga/" target="_blank">Facebook</a>
+        <a href="https://twitter.com/LeximibelLanga/" target="_blank">Twitter</a>
+        <a href="https://instagram.com/langa.leximibel/" target="_blank">Instagram</a>
+        <a href="https://github.com/leximibellanga/" target="_blank">Github</a>
+      </div>
+    </div>
   </footer>
 
   <!-- ================ JAVASCRIPT ================ -->
