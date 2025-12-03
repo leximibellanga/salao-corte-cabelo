@@ -79,7 +79,7 @@
         </tr>
         <tr>
           <td>Crianças</td>
-          <td class="nr">50,00MZN</td>
+          <td class="nr">60,00MZN</td>
         </tr>
         <tr>
           <td>Jovens</td>
@@ -95,7 +95,7 @@
         </tr>
         <tr>
           <td>Juba</td>
-          <td class="nr">50,00MZN</td>
+          <td class="nr">40,00MZN</td>
         </tr>
         <tr>
           <td>Alinhamento d' Sombras</td>
@@ -160,21 +160,49 @@
 
     <!-- ======================= AGENDAR ======================= -->
     <section class="agendar" id="agendar">
-      <form action="#msg-confirmacao" method="post">
+
         <img src="imagens/logotipo.jpg" alt="logotipo da Hair Solution" class="agendar-logo">
         <h2>Agende seu horário</h2>
         <label for="inome">Nome</label>
-        <input type="text" name="nome" id="inome" placeholder="Seu nome">
+        <input type="text" name="nome" id="inome" placeholder="Informe seu nome">
+
+        <label for="iemail">Email</label>
+        <input type="text" name="email" id="iemail" placeholder="Informe seu endereco de email"> 
+
+        <label for="itelefone">Telefone</label>
+        <input type="text" name="telefone" id="itelefone" placeholder="Informe seu telefone valido">
 
         <label for="idata">Data</label>
-        <input type="date" name="data" id="idata" placeholder="dd/mm/aaaa">
+        <input type="date" name="data" id="idata" placeholder="Data">
 
         <label for="ihora">Hora</label>
-        <input type="time" name="hora" id="ihora" placeholder="--:--">
+        <input type="time" name="hora" id="ihora" placeholder="Hora">
 
-        <input type="submit" value="Enviar">
+        <label for="iservico">Hora</label>
+        <select type="time" name="servico" id="iservico">
+          <option disabled selected>Escolhe um servico</option>
+          <optgroup label="Corte">
+            <option value="corte - crianca" class="opcao">Corte - Crianças</option> <!--[0]-->
+            <option value="corte - jovens" class="opcao">Corte - Jovens</option> <!--[1]-->
+            <option value="corte - adultos" class="opcao">Corte - Adultos</option> <!--[2]-->
+            <option value="corte - mulheres" class="opcao">Corte - Mulheres</option> <!--[3]-->
+            <option value="corte + afro" class="opcao">Corte + Afro</option> <!--[4]-->
+          </optgroup>
+          <optgroup label="Pintura">
+            <option value="pintar - preto" class="opcao">Pintar a Preto</option> <!--[5]-->
+            <option value="pintar - loiro" class="opcao">Pintar a Loiro</option> <!--[6]-->
+            <option value="pintar - branco" class="opcao">Pintar a Branco</option> <!--[7]-->
+          </optgroup>
+          <optgroup label="Extras">
+            <option value="barba" class="opcao">Barba</option> <!--[8]-->
+            <option value="juba" class="opcao">Juba</option> <!--[9]-->
+            <option value="alinhamento de sombra" class="opcao">Alinhamento de Sombras</option> <!--[10]-->  
+            <option value="testorizacao" class="opcao">Testorizaçao</option> <!--[11]-->
+          </optgroup>
+        </select>
+
+        <input type="submit" value="Agendar" id="btn-agendar">
         <input type="reset" value="Limpar">
-      </form>
     </section>
 
     <!-- ======================= CONFIRMACAO DO AGENDAMENTO ======================= -->
@@ -184,19 +212,27 @@
         <table>
           <tr>
             <th>Nome: </th>
-            <td id="msg-nome">Leximibel</td>
+            <td id="msg-nome"></td>
+          </tr>
+          <tr>
+            <th>Telefone: </th>
+            <td id="msg-telefone"></td>
           </tr>
           <tr>
             <th>Data: </th>
-            <td id="msg-data">11/08/2005</td>
+            <td id="msg-data"></td>
           </tr>
           <tr>
             <th>Hora: </th>
-            <td id="msg-hora">17:07</td>
+            <td id="msg-hora"></td>
+          </tr>
+          <tr>
+            <th>Serviço: </th>
+            <td id="msg-servico"></td>
           </tr>
           <tr>
             <th>Valor: </th>
-            <td id="msg-nome">100,00MZN</td>
+            <td id="msg-valor"></td>
           </tr>
         </table>
         <button id="msg-fechar">Fechar</button>

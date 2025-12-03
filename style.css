@@ -105,7 +105,6 @@ header .parte02 {
     align-items: center;
     justify-content: space-evenly;
     gap: 1rem;
-    z-index: 10001;
 }
 
 header .parte02 .logo-descricao {
@@ -434,18 +433,31 @@ main .agendar h2 {
 main .agendar label {
     display: block;
     font-size: .9em;
-    margin-bottom: .5rem;
-    font-weight: 500;
+    font-weight: 400;
 }
 
-main .agendar input, main .agendar select, main .agendar textarea {
+main .agendar input, 
+main .agendar select {
     width: 100%;
-    padding: 8px 10px;
+    padding: 8px 10px 8px 0;
     margin-bottom: 1rem;
-    border: 1px solid var(--cor-cinza);
-    border-radius: 5px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid var(--cor-cinza);
     font-size: .9em;
     font-family: var(--fonte);
+    transition: border-color .4s ease, color .4s ease;
+}
+
+main .agendar input:hover, 
+main .agendar input:focus,
+main .agendar select:hover,
+main .agendar select:focus {
+    border-color: var(--cor-primaria-dark);
+}
+main .agendar input:not(:focus), 
+main .agendar select:not(:focus) {
+    color: #666;
 }
 
 main .agendar input[type='submit'], main .agendar input[type='reset'] {
@@ -479,6 +491,7 @@ main .msg-confirmacao {
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: var(--cor-branca);
+    text-align: center;
     width: 400px;
     padding: 2rem;
     border-radius: 8px;
@@ -511,6 +524,12 @@ main .msg-confirmacao th, main .msg-confirmacao td {
     border: none;
 }
 
+main .msg-confirmacao tr {
+    width: calc(400px - 4rem);
+    display: flex;
+    justify-content: space-between;
+}
+
 main .msg-confirmacao #msg-fechar {
     padding: 8px 16px;
     background-color: var(--cor-destaque);
@@ -519,12 +538,6 @@ main .msg-confirmacao #msg-fechar {
     border-radius: 4px;
     font-weight: 600;
     transition: background-color .4s ease;
-}
-
-main .msg-confirmacao tr {
-    width: calc(400px - 4rem);
-    display: flex;
-    justify-content: space-between;
 }
 
 main .msg-confirmacao #msg-fechar:hover {
@@ -681,12 +694,11 @@ footer .rodape-container a:nth-child(3)::after {
     /* =============== HEADER AND NAV =============== */
     header {
         position: relative;
-        overflow: hidden;
+
     }
     nav {
         position: absolute;
-        top: 140px;
-        right: -1000px;
+        
         background-color: var(--cor-branca);
         width: 80%;
         border-radius: 5px;
@@ -697,7 +709,7 @@ footer .rodape-container a:nth-child(3)::after {
         flex-flow: column wrap;
         padding: 50px 10px 20px;
         gap: 1.6rem;
-        z-index: 1002;
+        z-index: 1000;
         transition: right .4s ease;
     }
     nav #botao-fechar-menu {

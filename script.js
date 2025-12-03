@@ -14,9 +14,6 @@ botaoFecharMenu.addEventListener('click', () => {
     header.style.overflow = 'hidden'
 })
 
-
-
-
 /* =============== BOTAO DE 'VER MAIS' IMAGENS DO PORTFOLIO ================*/
 let verMais = document.getElementById('ver-mais')
 let portfolioImg = document.getElementsByClassName('portfolio-img')
@@ -45,5 +42,55 @@ for (let i = 0; i < botaoAgendar.length; i++) {
         agendar.style.display = 'block'
     })
 }
+
+
+/* =============== AGENDAR ================*/
+let nome = document.getElementById('inome')
+let email = document.getElementById('iemail')
+let telefone = document.getElementById('itelefone')
+let data = document.getElementById('idata')
+let hora = document.getElementById('ihora')
+let servico = document.getElementById('iservico')
+let btnAgendar = document.getElementById('btn-agendar')
+let msgConfirmacao = document.getElementById('msg-confirmacao')
+let msgFechar = document.getElementById('msg-fechar')
+
+btnAgendar.addEventListener('click', () => {
+    if (nome.value == '' || email.value == '' || telefone.value == '' || data.value == '' || hora.value == '' || servico.value == '') {
+        alert('Preencha o formulario!')
+    } else {
+        let msgNome = document.getElementById('msg-nome')
+        let msgTelefone = document.getElementById('msg-telefone')
+        let msgData = document.getElementById('msg-data')
+        let msgHora = document.getElementById('msg-hora')
+        let msgServico = document.getElementById('msg-servico')
+        let valor = document.getElementById('msg-valor')
+        let opcoes = document.getElementsByClassName('opcao')
+        // vectores
+        let valores = [nome.value, telefone.value, data.value, hora.value, servico.value]
+        let variaveis = [msgNome, msgTelefone, msgData, msgHora, msgServico]
+        let dinheiro = [60, 100, 120, 140, 180, 100, 180, 200, 50, 40, 30, 350]
+
+        for(let i = 0; i < opcoes.length; i++) {
+            if (servico.value == opcoes[i].value) {
+                valor.textContent = `${dinheiro[i]}.00MZN`
+            }
+        }
+        for(let i = 0; i < variaveis.length; i++) {
+            variaveis[i].textContent = valores[i]
+        }
+
+        agendar.style.display = 'none'
+        msgConfirmacao.style.display = 'block'
+    }
+})
+
+/* fechar msg de confirmacao */
+msgFechar.addEventListener('click', () => {
+    msgConfirmacao.style.display = 'none'
+})
+
+
+
 
 
