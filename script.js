@@ -5,7 +5,7 @@ let header = document.getElementById('header')
 let botaoFecharMenu = document.getElementById('botao-fechar-menu')
 
 menuBurger.addEventListener('click', () => {
-    navbar.style.right = '20px'
+    navbar.style.right = '0'
     header.style.overflow = 'visible'
 })
 
