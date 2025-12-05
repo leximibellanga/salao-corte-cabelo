@@ -8,7 +8,10 @@
   <!-- CSS -->
   <link rel="stylesheet" href="style.css">
   <!-- ICONES -->
+   <!-- boxicons -->
   <link href='https://cdn.boxicons.com/3.0.6/fonts/basic/boxicons.min.css' rel='stylesheet'>
+   <!-- remixicons -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
 </head>
 <body>
   <!-- ======================= HEADER ======================= -->
@@ -19,7 +22,7 @@
       </div>
     </div>
 
-    <div class="parte02">
+    <div class="parte02" id="parte-02">
       <div class="logo-descricao">
         <span><i class='bx  bx-ruler'></i> </span>
         <div>
@@ -30,16 +33,15 @@
 
       <nav class="navbar" id="navbar">
         <i class='bx  bx-x' id="botao-fechar-menu"></i> 
-        <a href="index.html">inicio</a>
-        <a href="#sobre">sobre</a>
-        <a href="#servicos">serviços</a>
-        <a href="#portfolio">portfólio</a>
-        <a href="#contacto">contacto</a>
+        <a href="index.html" class="navbar-link">inicio</a>
+        <a href="#sobre" class="navbar-link">sobre</a>
+        <a href="#servicos" class="navbar-link">serviços</a>
+        <a href="#portfolio" class="navbar-link">portfólio</a>
+        <a href="#contacto" class="navbar-link">contacto</a>
       </nav>
 
       <div class="agendar">
         <button class="botao-agendar">agendar <i class='bx bx-calendar'></i></button> <!--[0]-->
-
         <div class="butao-menu-burger" id="butao-menu-burger">
           <i class='bx  bx-menu'></i>
         </div>
@@ -66,6 +68,7 @@
         <p class="sobre-texto">
           Na Hair Solution, acreditamos que um bom corte de cabelo vai além da estética; é uma experiência que transforma e eleva a autoestima. Com uma equipe de profissionais altamente qualificados e apaixonados pelo que fazem, oferecemos serviços personalizados que atendem às necessidades e desejos de cada cliente. Nosso compromisso é proporcionar um ambiente acolhedor e moderno, onde cada visita se torna um momento especial. Venha descobrir como podemos realçar sua beleza natural com estilo e sofisticação.
         </p>
+        <button class="botao-agendar">agendar <i class='bx bx-calendar'></i></button> <!--[2]-->
       </div>
     </section>
 
@@ -158,6 +161,49 @@
       </div>
     </section>
 
+
+    <!-- ======================= MAIN => CONTACTO ======================= -->
+    <section class="contacto" id="contacto">
+      <h2>Contacte-nos</h2>
+      <h3>Escreva para nós e fique na régua</h3>
+      <div class="contacto-container">
+
+        <div class="contacto-cartao">
+          <div class="contacto-icone">
+            <i class='bx  bx-location'></i> 
+          </div>
+          <h3>Estamos aqui</h3>
+          <address>Maputo - Matola <br>1º de Maio</address>
+        </div>
+
+        <div class="contacto-cartao">
+          <div class="contacto-icone">
+            <i class='bx  bx-phone'></i> 
+          </div>
+          <h3>Fale conosco</h3>
+          <address>+258 85 792 1043 <br> +258 87 252 5004</address>
+        </div>
+
+        <div class="contacto-cartao">
+          <div class="contacto-icone">
+            <i class='bx  bx-message-dots'></i> 
+          </div>
+          <h3>Converse conosco</h3>
+          <div class="contacto-redes-sociais">
+            <a href="https://api.whatsapp.com/send?phone=258857921043&text=Kmk, Fale conosco!" target="_blank" class="contacto-redes-sociais-link">
+              <i class="ri-whatsapp-line"></i>
+            </a>
+            <a href="https://m.me/leximibellanga" target="_blank" class="contacto-redes-sociais-link">
+              <i class="ri-messenger-line"></i>
+            </a>
+            <a href="https://t.me/telegram" target="_blank" class="contacto-redes-sociais-link">
+              <i class="ri-telegram-line"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ======================= AGENDAR ======================= -->
     <section class="agendar" id="agendar">
 
@@ -167,10 +213,10 @@
         <input type="text" name="nome" id="inome" placeholder="Informe seu nome">
 
         <label for="iemail">Email</label>
-        <input type="text" name="email" id="iemail" placeholder="Informe seu endereco de email"> 
+        <input type="text" name="email" id="iemail" placeholder="Ex: abc@gmail.com"> 
 
         <label for="itelefone">Telefone</label>
-        <input type="text" name="telefone" id="itelefone" placeholder="Informe seu telefone valido">
+        <input type="text" name="telefone" id="itelefone" placeholder="8X XXX XXXX">
 
         <label for="idata">Data</label>
         <input type="date" name="data" id="idata" placeholder="Data">
@@ -178,7 +224,7 @@
         <label for="ihora">Hora</label>
         <input type="time" name="hora" id="ihora" placeholder="Hora">
 
-        <label for="iservico">Hora</label>
+        <label for="iservico">Servico</label>
         <select type="time" name="servico" id="iservico">
           <option disabled selected>Escolhe um servico</option>
           <optgroup label="Corte">
@@ -202,7 +248,7 @@
         </select>
 
         <input type="submit" value="Agendar" id="btn-agendar">
-        <input type="reset" value="Limpar">
+        <!-- <input type="reset" value="Limpar"> -->
     </section>
 
     <!-- ======================= CONFIRMACAO DO AGENDAMENTO ======================= -->

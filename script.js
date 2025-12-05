@@ -3,16 +3,24 @@ let menuBurger = document.getElementById('butao-menu-burger')
 let navbar = document.getElementById('navbar')
 let header = document.getElementById('header')
 let botaoFecharMenu = document.getElementById('botao-fechar-menu')
-
+let navbarLink = document.getElementsByClassName('navbar-link')
+// abrir menu quando clicar no MenuBurger
 menuBurger.addEventListener('click', () => {
     navbar.style.right = '0'
     header.style.overflow = 'visible'
 })
-
-botaoFecharMenu.addEventListener('click', () => {
+// Funcao para fechar menu 
+function fecharMenu() {
     navbar.style.right = '-1000px'
     header.style.overflow = 'hidden'
-})
+}
+// fechar menu quando clicar no 'X'
+botaoFecharMenu.addEventListener('click', fecharMenu)
+// Fechar menu ao clicar nos Links navbar
+for (let i = 0; i < navbarLink.length; i++) {
+    navbarLink[i].addEventListener('click', fecharMenu)
+}
+
 
 /* =============== BOTAO DE 'VER MAIS' IMAGENS DO PORTFOLIO ================*/
 let verMais = document.getElementById('ver-mais')
@@ -57,7 +65,7 @@ let msgFechar = document.getElementById('msg-fechar')
 
 btnAgendar.addEventListener('click', () => {
     if (nome.value == '' || email.value == '' || telefone.value == '' || data.value == '' || hora.value == '' || servico.value == '') {
-        alert('Preencha o formulario!')
+        alert('Por favor preencha o formulario!')
     } else {
         let msgNome = document.getElementById('msg-nome')
         let msgTelefone = document.getElementById('msg-telefone')
@@ -82,6 +90,7 @@ btnAgendar.addEventListener('click', () => {
 
         agendar.style.display = 'none'
         msgConfirmacao.style.display = 'block'
+        nome.value = email.value = telefone.value = data.value = hora.value = servico.value = ''
     }
 })
 
@@ -90,6 +99,17 @@ msgFechar.addEventListener('click', () => {
     msgConfirmacao.style.display = 'none'
 })
 
+
+
+// SCROOL
+window.addEventListener('scroll', () => {
+    const headerParte02 = document.querySelector('header .parte02')
+    if (this.scrollY >= 130) {
+        headerParte02.classList.add('menu-fixo')
+    } else {
+        headerParte02.classList.remove('menu-fixo')
+    }
+})
 
 
 
